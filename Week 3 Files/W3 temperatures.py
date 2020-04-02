@@ -12,6 +12,14 @@ def main():
 
 
 def celsius_to_fahrenheit():
-    temp = input('Enter temperature in celsius: ')
+    temp = float(input('Enter temperature in celsius: '))
     fahrenheit = (temp*1.8) + 32
-    print("{}"u"\u2103""is {}"u"\u2109".format(temp.fahrenheit))
+    print('{:.2f}'u'\u2103'' is {:.2f}'u'\u2109'.format(temp,fahrenheit))
+
+def fahrenheit_to_celsius():
+    temp = float(input('Enter temperature in celsius: '))
+    celsius = (5(temp-32))/9
+    print('{:.2f}'u'\u2109'' is {:.2f}'u'\u2103'.format(temp, celsius))
+
+
+main()
