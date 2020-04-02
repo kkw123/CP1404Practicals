@@ -18,7 +18,7 @@ def celsius_to_fahrenheit():
 
 def fahrenheit_to_celsius():
     temp = float(input('Enter temperature in celsius: '))
-    celsius = (5(temp-32))/9
+    celsius = (5*(temp-32))/9
     print('{:.2f}'u'\u2109'' is {:.2f}'u'\u2103'.format(temp, celsius))
 
 
