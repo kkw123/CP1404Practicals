@@ -7,19 +7,21 @@ Github link: https://github.com/kkw123/CP1404Practicals
 """
 
 def main():
-    temp_celsius = float(input('Enter temperature in celsius: '))
-    temp_fahrenheit = float(input('Enter temperature in fahrenheit: '))
-    celsius_to_fahrenheit(temp_celsius)
-    fahrenheit_to_celsius(temp_fahrenheit)
+    original_celsius = float(input('Enter temperature in celsius: '))
+    original_fahrenheit = float(input('Enter temperature in fahrenheit: '))
+    converted_to_fahrenheit = celsius_to_fahrenheit(temp_celsius)
+    converted_to_celsius = fahrenheit_to_celsius(temp_fahrenheit)
+    print('{} degrees celsius is {} degrees fahrenheit'.format(original_celsius,converted_to_fahrenheit))
+    print('{} degrees fahrenheit is {} degrees celsius'.format(original_fahrenheit,converted_to_celsius))
 
 
 def celsius_to_fahrenheit(temp):
     fahrenheit = (temp*1.8) + 32
-    print('{:.2f}'u'\u2103'' is {:.2f}'u'\u2109'.format(temp,fahrenheit))
+    return fahrenheit
 
 def fahrenheit_to_celsius(temp):
     celsius = (5*(temp-32))/9
-    print('{:.2f}'u'\u2109'' is {:.2f}'u'\u2103'.format(temp, celsius))
+    return celsius
 
 
 main()
