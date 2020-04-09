@@ -21,4 +21,15 @@ def main():
     print('The average of the numbers is {}'.format(average))
 
 
-main()
+def security_checker():
+    usernames = ['jimbo', 'giltson98', 'derekf', 'WhatSup', 'NicolEye', 'swei45', 'BaseInterpreterInterface',
+                 'BaseStdIn', 'Command', 'ExecState', 'InteractiveConsole', 'InterpreterInterface', 'StartServer',
+                 'bob']
+    input_username = input('What is your username? ')
+    if input_username in usernames:
+        print('Access Granted')
+    else:
+        print('Access Denied')
+
+
+security_checker()
