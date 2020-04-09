@@ -13,7 +13,8 @@ NUMBER_PER_DRAW = 6
 
 def main():
     amt_of_draws = int(input('How many quick picks? '))
-
+    for draws in range(amt_of_draws):
+        make_draw()
 
 
 def make_draw():
@@ -23,7 +24,8 @@ def make_draw():
         current_number = random.randint(FIRST_NUMBER-1,LAST_NUMBER)
         if current_number not in drawn_numbers:
             drawn_numbers.append(current_number)
-    print(drawn_numbers)
+    display_numbers = ' '.join([str(num) for num in drawn_numbers])
+    print(display_numbers)
 
 
 main()
