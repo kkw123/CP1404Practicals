@@ -29,10 +29,16 @@ def get_data():
         print(parts)  # See if that worked
         print("----------")
         """
-        line = line.strip()     # Remove the \n
-        subject_data.append(line.split(','))    #Convert the line into an array
+        line = line.strip()  # Remove the \n
+        subject_data.append(line.split(','))  # Convert the line into an array
     print(subject_data)
+    display_details(subject_data)
     input_file.close()
+
+
+def display_details(array):
+    for details in array:
+        print('{} is taught by {} and has {} students'.format(details[0], details[1], details[2]))
 
 
 main()
