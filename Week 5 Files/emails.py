@@ -8,7 +8,7 @@ Github link: https://github.com/kkw123/CP1404Practicals
 
 
 def main():
-    name_to_email = {}
+    names_to_emails = {}
     input_email = input('Enter email: ')
     # ask user for email
     while input_email != '':
@@ -17,9 +17,10 @@ def main():
         # convert text in front of @ into a name
         name = ask_name(name)
         # ask user if name is correct
-        name_to_email[name] = input_email
+        names_to_emails[name] = input_email
         # if True add into dictionary, else ask for real name and store both
         input_email = input('Enter email: ')
+    print_results(names_to_emails)
 
 
 def extract_name(string):
@@ -34,12 +35,15 @@ def extract_name(string):
 def ask_name(name):
     while True:
         input_answer = input('Is your name {}? (Y/n) '.format(name))
-        if input_answer.lower() == 'n':
+        if input_answer.lower() == 'n' or input_answer.lower() == 'no':
             name = input('Enter name: ')
             return name
-        elif input_answer.upper == 'Y' or input_answer == '':
+        elif input_answer.upper() == 'Y' or input_answer == '':
             return name
         print('Invalid Input')
 
 
+def print_results(dict1):
+    for name, email in dict1.items():
+        print('{} ({})'.format(name, email))
 main()
