@@ -15,13 +15,13 @@ print(CODE_TO_NAME)
 
 
 def user_input(dict1):
-    state_code = input("Enter short state: ")
+    state_code = input("Enter short state: ").upper()
     while state_code != "":
         if state_code.upper() in dict1:
-            print('{} is {}'.format(state_code.upper(), dict1[state_code.upper()]))
+            print('{} is {}'.format(state_code, dict1[state_code]))
         else:
             print("Invalid short state")
-        state_code = input("Enter short state: ")
+        state_code = input("Enter short state: ").upper()
 
 
 def print_all(dict1):
