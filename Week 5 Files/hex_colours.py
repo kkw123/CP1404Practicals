@@ -21,11 +21,12 @@ COLOURS = {"aliceblue": "#f0f8ff",
 def main():
     user_input = input('Enter a colour: ').strip().lower()
     while user_input != '':
-        for colour in COLOURS:
-            if str(colour) == user_input:
-                print(COLOURS.get('user_input'))
-        print('Enter a valid colour')
-        user_input = input('Enter a colour: ').strip().lower()
+        if COLOURS.get(user_input):
+            print('{} is colour code for {}'.format(COLOURS.get(user_input),user_input))
+            user_input = input('Enter a colour: ').strip().lower()
+        else:
+            print('Enter a valid colour')
+            user_input = input('Enter a colour: ').strip().lower()
 
 
 main()
