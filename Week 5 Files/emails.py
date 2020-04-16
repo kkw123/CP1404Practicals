@@ -11,13 +11,15 @@ def main():
     name_to_email = {}
     input_email = input('Enter email: ')
     # ask user for email
-    name_and_email = input_email.split('@')
-    name = extract_name(name_and_email[0])
-    name = ask_name(name)
-    # convert text in front of @ into a name
-    # ask user if name is correct
-    # if True add into dictionary, else ask for real name and store both
-
+    while input_email != '':
+        name_and_email = input_email.split('@')
+        name = extract_name(name_and_email[0])
+        # convert text in front of @ into a name
+        name = ask_name(name)
+        # ask user if name is correct
+        name_to_email[name] = input_email
+        # if True add into dictionary, else ask for real name and store both
+        input_email = input('Enter email: ')
 
 
 def extract_name(string):
@@ -31,7 +33,7 @@ def extract_name(string):
 
 def ask_name(name):
     while True:
-        input_answer = input('Is your name {}? (Y/n)'.format(name))
+        input_answer = input('Is your name {}? (Y/n) '.format(name))
         if input_answer.lower() == 'n':
             name = input('Enter name: ')
             return name
@@ -40,3 +42,4 @@ def ask_name(name):
         print('Invalid Input')
 
 
+main()
