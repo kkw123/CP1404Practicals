@@ -6,7 +6,7 @@ Car class example.
 class Car:
     """Represent a Car object."""
 
-    def __init__(self,name='', fuel=0):
+    def __init__(self,name='Car', fuel=0):
         """Initialise a Car instance.
 
         fuel: float, one unit of fuel drives one kilometre
@@ -32,6 +32,11 @@ class Car:
             self.fuel -= distance
         self.odometer += distance
         return distance
+    """
+    def __str__(self):
+        return 'Car, Fuel = {}, Odometer = {}'.format(self.fuel, self.odometer)
+    """
+    """First version for Question 6 on the worksheet"""
 
     def __str__(self):
-        return '{}, Fuel = {}, Odometer = {}'.format(self.name, self.fuel,self.odometer)
+        return '{}, Fuel = {}, Odometer = {}'.format(self.name, self.fuel, self.odometer)
