@@ -13,5 +13,11 @@ class Guitar:
         self.year = year
         self.cost = cost
 
+    def get_age(self):
+        return 2020 - self.year
+
+    def is_vintage(self):
+        return self.get_age() > 50
+
     def __str__(self):
         return '{} ({}) : ${:,}'.format(self.name, self.year, self.cost)
