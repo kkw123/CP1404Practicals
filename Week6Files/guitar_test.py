@@ -18,12 +18,15 @@ def main():
     print('My Guitars!')
     while True:
         name = input('Name: ')
-        while name:
-            year = int(input('Year: '))
-            cost = float(input('Cost: '))
-            guitars.append(Guitar(name, year, cost))
+        if not name:
+            break
+        year = int(input('Year: '))
+        cost = float(input('Cost: '))
+        guitars.append(Guitar(name, year, cost))
     print('...snip...')
-
+    count = 0
+    for i, guitar in enumerate(guitars, 1):
+        print('Guitar {}: {}'.format(i, guitar))
 
 
 main()
