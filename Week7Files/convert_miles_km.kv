@@ -6,6 +6,7 @@ BoxLayout:
             id: input_number
             font_size: 50
             multiline: False
+            on_text: app.convert(input_number.text)
         BoxLayout:
             orientation: 'vertical'
             Button:
@@ -16,10 +17,10 @@ BoxLayout:
                 id: decrease_number
                 text: 'Down'
                 on_press: app.handle_increment(-1)
-    Button:
-        id: convert_input
-        text: 'Convert miles to kilometers'
-        on_press: app.convert(int(input_number.text))
+    #Button:
+        #id: convert_input
+        #text: 'Convert miles to kilometers'
+        #on_press: app.convert(input_number.text)
     Label:
         id: output_value
         font_size: 50

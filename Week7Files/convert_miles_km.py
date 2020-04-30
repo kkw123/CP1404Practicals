@@ -20,12 +20,22 @@ class MilesToKilometersApp(App):
         return self.root
 
     def convert(self, miles):
-        result = miles * 1.6
-        self.root.ids.output_value.text = str(result) + 'km'
+        try:
+            int(miles)
+        except ValueError:
+            self.root.ids.output_value.text = '0'
+        else:
+            result = int(miles) * 1.6
+            self.root.ids.output_value.text = str(result) + 'km'
 
     def handle_increment(self, number):
-        output = int(self.root.ids.input_number.text) + number
-        self.root.ids.input_number.text = str(output)
+        try:
+            int(self.root.ids.input_number.text)
+        except ValueError:
+            self.root.ids.input_number.text = '0'
+        else:
+            output = int(self.root.ids.input_number.text) + number
+            self.root.ids.input_number.text = str(output)
 
 
 MilesToKilometersApp().run()
