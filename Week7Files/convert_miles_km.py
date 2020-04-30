@@ -12,12 +12,20 @@ from kivy.core.window import Window
 
 
 class MilesToKilometersApp(App):
-    """ SquareNumberApp is a Kivy App for squaring a number """
+
     def build(self):
         Window.size = (200, 100)
         self.title = "Convert miles to kilometers"
         self.root = Builder.load_file('convert_miles_km.kv')
         return self.root
 
+    def convert(self, miles):
+        result = miles * 1.6
+        self.root.ids.output_value.text = str(result) + 'km'
 
-MilesToKilometersApp.run()
+    def handle_increment(self, number):
+        output = int(self.root.ids.input_number.text) + number
+        self.root.ids.input_number.text = str(output)
+
+
+MilesToKilometersApp().run()
