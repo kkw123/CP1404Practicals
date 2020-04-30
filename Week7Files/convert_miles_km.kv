@@ -1,0 +1,22 @@
+BoxLayout:
+    orientation: 'vertical'
+    BoxLayout:
+        orientation: 'horizontal'
+        TextInput:
+            id: input_number
+            text_size: 20
+            multiline: False
+        BoxLayout:
+            orientation: 'Vertical'
+            Button:
+                id: increase_number
+                text: 'Up'
+            Button:
+                id: decrease_number
+                text: 'Down'
+    Button:
+        id: convert_input
+        text: 'Convert miles to kilometers'
+    Label:
+        id: output_value
+        color: (1,0.412,0.706,1)
