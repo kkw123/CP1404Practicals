@@ -5,9 +5,13 @@ Name: Kum King Wye
 Github link: https://github.com/kkw123/CP1404Practicals
 
 """
+from Week8Files.SilverServiceTaxi import SilverServiceTaxi
+
 
 def main():
-    pass
+    car1 = SilverServiceTaxi('Pog', 1000, 2)
+    car1.drive(18)
+    print(car1.get_fare())
 
 
 main()
