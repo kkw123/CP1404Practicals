@@ -20,7 +20,10 @@ class SilverServiceTaxi(Taxi):
         return "{} plus flagfall of ${:.2f}".format(super().__str__(), SilverServiceTaxi.flagfall)
 
     def get_fare(self):
-        return self.price_per_km * self.current_fare_distance + SilverServiceTaxi.flagfall
+        if self.current_fare_distance > 0:
+            return self.price_per_km * self.current_fare_distance + SilverServiceTaxi.flagfall
+        else:
+            return 0
 
 
 
