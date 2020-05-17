@@ -31,7 +31,14 @@ def main():
         elif user_input.lower() == 'q':
             break
             """Exits the loop"""
-    print('Total Trip Cost: $')
+        bill += taxis[array].get_fare()
+        print('Bill to date: ${}'.format(bill))
+    print('Total Trip Cost: ${:.2f}'.format(bill))
+    print('Taxis are now')
+    taxi_count = 0
+    for taxi in taxis:
+        print('{} - {}'.format(taxi_count, taxi))
+        taxi_count += 1
 
 
 def choose_taxi(array, bill):
