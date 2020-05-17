@@ -11,7 +11,6 @@ from random import randint
 
 
 class UnreliableCar(Car):
-    pass
 
     def __init__(self, name, fuel, reliability):
         super().__init__(name, fuel)
