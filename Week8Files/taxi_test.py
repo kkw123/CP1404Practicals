@@ -10,7 +10,7 @@ from Week8Files.taxi import Taxi
 
 
 def main():
-    taxi1 = Taxi('Prius 1', 100, 1.23)
+    taxi1 = Taxi('Prius 1', 100)
     print(taxi1)
     """First Details"""
     taxi1.drive(40)
@@ -24,5 +24,4 @@ def main():
     """Third Details after odo reset and 100km drive"""
 
 
-    
 main()
