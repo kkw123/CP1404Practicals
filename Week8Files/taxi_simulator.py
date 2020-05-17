@@ -24,6 +24,7 @@ def main():
                 print('No vehicle chosen')
             else:
                 drive_taxi(taxis, current_vehicle, bill)
+                bill += taxis[current_vehicle].get_fare()
                 """Does drive function on the taxi"""
         elif user_input.lower() == 'c':
             current_vehicle = choose_taxi(taxis, bill)
@@ -31,8 +32,7 @@ def main():
         elif user_input.lower() == 'q':
             break
             """Exits the loop"""
-        bill += taxis[array].get_fare()
-        print('Bill to date: ${}'.format(bill))
+        print('Bill to date: ${:.2f}'.format(bill))
     print('Total Trip Cost: ${:.2f}'.format(bill))
     print('Taxis are now')
     taxi_count = 0
