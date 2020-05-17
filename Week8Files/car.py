@@ -10,7 +10,7 @@ Github link: https://github.com/kkw123/CP1404Practicals
 class Car:
     """Represent a Car object."""
 
-    def __init__(self,name='Car', fuel=0):
+    def __init__(self, name='Car', fuel=0):
         """Initialise a Car instance.
 
         fuel: float, one unit of fuel drives one kilometre
