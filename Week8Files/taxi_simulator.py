@@ -7,7 +7,7 @@ Github link: https://github.com/kkw123/CP1404Practicals
 """
 
 from Week8Files.taxi import Taxi
-from Week8Files.SilverServiceTaxi import SilverServiceTaxi
+from Week8Files.silver_service_taxi import SilverServiceTaxi
 
 
 def main():

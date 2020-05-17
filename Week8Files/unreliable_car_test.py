@@ -6,7 +6,7 @@ Github link: https://github.com/kkw123/CP1404Practicals
 
 """
 
-from Week8Files.UnreliableCar import UnreliableCar
+from Week8Files.unreliable_car import UnreliableCar
 
 
 def main():
