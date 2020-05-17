@@ -41,19 +41,14 @@ def choose_taxi(array, bill):
         print('{} - {}'.format(taxi_count, taxi))
         taxi_count += 1
     choose_input = input('Choose taxi: ')
-    for taxi in array:
-        bill += taxi.get_fare()
-    print('Bill to date: ${:.2f}'.format(bill))
     return int(choose_input)
 
 
 def drive_taxi(array, taxi, bill):
     drive_input = int(input('Drive how far? '))
+    array[taxi].start_fare()
     array[taxi].drive(drive_input)
     print('Your {} trip cost you ${:.2f}'.format(array[taxi].name, array[taxi].get_fare()))
-    for taxi in array:
-        bill += taxi.get_fare()
-    print('Bill to date: ${:.2f}'.format(bill))
 
 
 main()
