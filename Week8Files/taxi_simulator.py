@@ -14,33 +14,46 @@ def main():
     taxis = [Taxi("Prius", 100), SilverServiceTaxi("Limo", 100, 2), SilverServiceTaxi("Hummer", 200, 4)]
     user_input = str()
     current_vehicle = None
+    bill = 0
+    print('Let\'s Drive')
     while not user_input.lower() == 'q':
-        print('Let\'s Drive')
         print('q)uit, c)hoose taxi, d)rive')
         user_input = input('>>> ')
         if user_input.lower() == 'd':
             if current_vehicle is None:
                 print('No vehicle chosen')
             else:
-                pass
-            """Does drive function on the taxi"""
+                drive_taxi(taxis, current_vehicle, bill)
+                """Does drive function on the taxi"""
         elif user_input.lower() == 'c':
-            current_vehicle = choose_taxi(taxis)
+            current_vehicle = choose_taxi(taxis, bill)
             """Returns chosen taxi"""
         elif user_input.lower() == 'q':
-            pass
+            break
             """Exits the loop"""
+    print('Total Trip Cost: $')
 
 
-def choose_taxi(array):
-    """Only breaks if valid Taxi chosen"""
+def choose_taxi(array, bill):
     print('Taxis Available')
     taxi_count = 0
     for taxi in array:
         print('{} - {}'.format(taxi_count, taxi))
         taxi_count += 1
     choose_input = input('Choose taxi: ')
-    return choose_input
+    for taxi in array:
+        bill += taxi.get_fare()
+    print('Bill to date: ${:.2f}'.format(bill))
+    return int(choose_input)
+
+
+def drive_taxi(array, taxi, bill):
+    drive_input = int(input('Drive how far? '))
+    array[taxi].drive(drive_input)
+    print('Your {} trip cost you ${:.2f}'.format(array[taxi].name, array[taxi].get_fare()))
+    for taxi in array:
+        bill += taxi.get_fare()
+    print('Bill to date: ${:.2f}'.format(bill))
 
 
 main()
