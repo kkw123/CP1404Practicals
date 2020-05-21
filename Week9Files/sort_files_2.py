@@ -32,5 +32,11 @@ def main():
         file_extension = ''
     print(file_types)
 
+    # Ask the user to categorise different extensions
+    for file_type in file_types:
+        user_input = input('What category would you like to sort {} files into? '.format(file_type))
+        file_types[file_type] = user_input
+    print(file_types)
+
 
 main()
