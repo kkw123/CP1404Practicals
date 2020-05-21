@@ -31,8 +31,31 @@ def main():
 
 def get_fixed_filename(filename):
     """Return a 'fixed' version of filename."""
-    new_name = filename.replace(" ", "_").replace(".TXT", ".txt")
-    return new_name
+    output = list()
+    if len(filename) <= 0:
+        output.append('_')
+    for index, letter in enumerate(filename):
+        try:
+            filename[index + 1]
+        except IndexError:
+            output.append(letter)
+        else:
+            if letter == ' ':
+                output.append('_')
+            elif filename[index - 1] == ' ' or filename[index - 1] == '(':
+                output.append(letter.upper())
+            elif letter.isupper():
+                if index == 0:
+                    output.append(letter)
+                elif filename[index].lower() + filename[index + 1].lower() + filename[index + 2].lower() == 'txt':
+                    output.append('txt')
+                    break
+                elif not filename[index - 1] == ' ':
+                    output.append('_')
+                    output.append(letter)
+            else:
+                output.append(letter)
+    print(''.join(output))
 
 
 def demo_walk():
@@ -47,4 +70,9 @@ def demo_walk():
 
 # main()
 # demo_walk()
-# get_fixed_filename()
+get_fixed_filename('Away In A Manger.txt')
+get_fixed_filename('SilentNight.txt')
+get_fixed_filename('O little town of bethlehem.TXT')
+get_fixed_filename('ItIsWell (oh my soul).txt')
+get_fixed_filename('')
+
