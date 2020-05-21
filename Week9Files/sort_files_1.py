@@ -17,7 +17,7 @@ def main():
     file_types = list()
 
     # find all different file formats
-    file_type = str()
+    file_extension = str()
     for file in files:
         for letter in range(-1, -len(file), -1):  # starts searching from the back of file name
             try:
@@ -27,9 +27,9 @@ def main():
             else:
                 if file[letter] == '.':
                     for array in range(letter + 1, 0):
-                        file_type += file[array]
-        file_types.append(file_type)
-        file_type = ''
+                        file_extension += file[array]
+        file_types.append(file_extension)
+        file_extension = ''
     print(file_types)
 
     # create new directory with file_types
