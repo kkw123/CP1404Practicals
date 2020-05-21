@@ -33,6 +33,12 @@ def main():
     print(file_types)
 
     # create new directory with file_types
+    for file_type in file_types:
+        try:
+            os.mkdir(file_type)
+        except FileExistsError:
+            pass
+
 
 
 main()
