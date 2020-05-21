@@ -10,7 +10,10 @@ import os
 
 
 def main():
-    pass
-
+    print("Starting directory is: {}".format(os.getcwd()))
+    os.chdir('FilesToSort')
+    print("Files in {}:\n{}\n".format(os.getcwd(), os.listdir('.')))
+    for a in os.walk('.'):
+        print(a)
 
 main()
