@@ -1,6 +1,9 @@
 """
 CP1404/CP5632 Practical
 Demos of various os module examples
+
+Name: Kum King Wye
+Github link: https://github.com/kkw123/CP1404Practicals
 """
 import shutil
 import os
