@@ -14,7 +14,7 @@ def main():
     os.chdir('FilesToSort2')
     print("Files are {}".format(os.listdir('.')))
     files = os.listdir('.')  # contains all file names
-    file_types = list()
+    file_types = dict()
 
     # find all different file formats
     file_extension = str()
@@ -28,7 +28,7 @@ def main():
                 if file[letter] == '.':
                     for index in range(letter + 1, 0):
                         file_extension += file[index]
-        file_types.append(file_extension)
+        file_types[file_extension] = ''
         file_extension = ''
     print(file_types)
 
