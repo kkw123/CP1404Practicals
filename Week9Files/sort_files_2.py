@@ -33,10 +33,14 @@ def main():
     print(file_types)
 
     # Ask the user to categorise different extensions
-    for file_type in file_types:
-        user_input = input('What category would you like to sort {} files into? '.format(file_type))
-        file_types[file_type] = user_input
-    print(file_types)
+    # for file_type in file_types:
+    #     user_input = input('What category would you like to sort {} files into? '.format(file_type))
+    #     file_types[file_type] = user_input
+    # print(file_types)
+
+    file_types = {'doc': 'Docs', 'docx': 'Docs', 'png': 'Images', 'gif': 'Images',
+                  'txt': 'Docs', 'xls': 'Spreadsheets', 'xlsx': 'Spreadsheets', 'jpg': 'Images'}
+    """Prevents needing to do user input loop again"""
 
 
 main()
