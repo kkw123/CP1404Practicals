@@ -18,7 +18,6 @@ def main():
 
     # Make a new directory
     # The next time you run this, it will crash if the directory exists
-    # TODO: Use exception handling to avoid the crash (just pass)
     try:
         os.mkdir('temp')
     except FileExistsError:
@@ -32,7 +31,6 @@ def main():
             new_name = get_fixed_filename(filename)
             print("Renaming {} to {}".format(filename, new_name))
 
-            # TODO: Try these options one at a time
             # Option 1: rename file to new name - in place
             # os.rename(filename, new_name)
 
@@ -48,11 +46,24 @@ def get_fixed_filename(filename):
 
 def demo_walk():
     """Process all subdirectories using os.walk()."""
+    # os.chdir('Lyrics')
+    # for directory_name, subdirectories, filenames in os.walk('.'):
+    #     print("Directory:", directory_name)
+    #     print("\tcontains subdirectories:", subdirectories)
+    #     print("\tand files:", filenames)
+    #     print("(Current working directory is: {})".format(os.getcwd()))
+
     os.chdir('Lyrics')
     for directory_name, subdirectories, filenames in os.walk('.'):
-        print("Directory:", directory_name)
-        print("\tcontains subdirectories:", subdirectories)
-        print("\tand files:", filenames)
-        print("(Current working directory is: {})".format(os.getcwd()))
+        directory_name = get_fixed_filename(directory_name)
+        print(directory_name)
+        for subdirectory in subdirectories:
+            subdirectory = get_fixed_filename(subdirectory)
+            print(subdirectory)
+        for filename in filenames:
+            filename = get_fixed_filename(filename)
+            print(filename)
 
 
+# main()
+demo_walk()
