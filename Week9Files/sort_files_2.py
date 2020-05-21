@@ -33,14 +33,14 @@ def main():
     print(file_types)
 
     # Ask the user to categorise different extensions
-    # for file_type in file_types:
-    #     user_input = input('What category would you like to sort {} files into? '.format(file_type))
-    #     file_types[file_type] = user_input
-    # print(file_types)
+    for file_type in file_types:
+        user_input = input('What category would you like to sort {} files into? '.format(file_type))
+        file_types[file_type] = user_input
+    print(file_types)
 
-    file_types = {'doc': 'Docs', 'docx': 'Docs', 'png': 'Images', 'gif': 'Images',
-                  'txt': 'Docs', 'xls': 'Spreadsheets', 'xlsx': 'Spreadsheets', 'jpg': 'Images'}
-    """Prevents needing to do user input loop again"""
+    # file_types = {'doc': 'Docs', 'docx': 'Docs', 'png': 'Images', 'gif': 'Images',
+    #               'txt': 'Docs', 'xls': 'Spreadsheets', 'xlsx': 'Spreadsheets', 'jpg': 'Images'}
+    # """Sample code to simulate completed user input"""
 
     # Create a new folder for each unique category
     for file_type, file_category in file_types.items():
@@ -49,6 +49,19 @@ def main():
             os.mkdir(file_category)
         except FileExistsError:
             pass
+
+    # Transfer files to their folders
+    for filename in files:
+        source_address = os.getcwd() + '\\'
+        destination_address = os.getcwd() + '\\'
+        current_file_type = str()
+        for letter in range(0, len(filename)):
+            if filename[letter] == '.':
+                for index in range(letter + 1, len(filename)):
+                    current_file_type += filename[index]
+        source_address += filename
+        destination_address += file_types.get(current_file_type)
+        shutil.move(source_address, destination_address)
 
 
 main()
