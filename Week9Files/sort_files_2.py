@@ -42,5 +42,13 @@ def main():
                   'txt': 'Docs', 'xls': 'Spreadsheets', 'xlsx': 'Spreadsheets', 'jpg': 'Images'}
     """Prevents needing to do user input loop again"""
 
+    # Create a new folder for each unique category
+    for file_type, file_category in file_types.items():
+        print(file_category)
+        try:
+            os.mkdir(file_category)
+        except FileExistsError:
+            pass
+
 
 main()
