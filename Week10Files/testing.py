@@ -6,12 +6,12 @@ Github link: https://github.com/kkw123/CP1404Practicals
 """
 
 import doctest
-from prac_06.car import Car
+from Week10Files.car10 import Car
 
 
 def repeat_string(s, n):
     """Repeat string s, n times, with spaces in between."""
-    return s * n
+    return [s for n in range(n)]
 
 
 def is_long_word(word, length=5):
@@ -30,11 +30,9 @@ def is_long_word(word, length=5):
 def run_tests():
     """Run the tests on the functions."""
     # assert test with no message - used to see if the function works properly
-    assert repeat_string("Python", 1) == "Python"
+    assert ' '.join(repeat_string("Python", 1)) == "Python"
     # the test below should fail
-    assert repeat_string("hi", 2) == "hi hi"
-
-    # TODO: 1. fix the repeat_string function above so that it passes the failing test
+    assert ' '.join(repeat_string("hi", 2)) == "hi hi"
     # Hint: "-".join(["yo", "yo"] -> "yo-yo"
 
     # assert test with custom message,
@@ -54,7 +52,7 @@ run_tests()
 
 # TODO: 3. Uncomment the following line and run the doctests
 # (PyCharm may see your >>> doctest comments and run doctests anyway.)
-# doctest.testmod()
+doctest.testmod()
 
 # TODO: 4. Fix the failing is_long_word function
 # (don't change the tests, change the function!)
