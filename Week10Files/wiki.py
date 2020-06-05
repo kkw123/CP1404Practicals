@@ -16,8 +16,11 @@ def main():
             for index in range(4):  # list 4 options
                 print(e.options[index])
         else:
-            print(page)
+            print(page.title)
+            print(page.summary)
+            print(page.url)
         user_input = input('Write page title or search -> ')
+    print('End')
 
 
 
