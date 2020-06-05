@@ -4,10 +4,21 @@ Wiki
 Name: Kum King Wye
 Github link: https://github.com/kkw123/CP1404Practicals
 """
+import wikipedia
 
 
 def main():
-    pass
+    user_input = input('Write page title or search -> ')
+    while user_input != '':
+        try:
+            page = wikipedia.page(user_input)
+        except wikipedia.exceptions.DisambiguationError as e:
+            for index in range(4):  # list 4 options
+                print(e.options[index])
+        else:
+            print(page)
+        user_input = input('Write page title or search -> ')
+
 
 
 main()
